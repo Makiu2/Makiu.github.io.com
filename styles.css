@@ -1,0 +1,150 @@
+/* Estilos generales */
+body {
+    background-color: transparent; /* Fondo transparente */
+    background-image: url('tu_imagen.png'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #333;
+    font-family: "Arial Narrow", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+}
+/* Estilos para el encabezado */
+header {
+    background-color: rgba(248, 215, 218, 0.4); /* Color de fondo con transparencia */
+    color: #333;
+    padding: 20px 0;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.left-nav, .right-nav {
+    flex: 1; /* Ocupa todo el espacio restante */
+    text-align: center; /* Alineación central para ambos lados */
+}
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: space-around; /* Distribución uniforme de los elementos */
+}
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li:first-child {
+    margin-left: 0;
+}
+
+nav ul li a {
+    color: #333;
+    text-decoration: none;
+    font-size: 1.5em;
+}
+
+/* Estilo para el espacio de 200x200px */
+.spacer {
+    width: 200px;
+    height: 200px;
+    flex-shrink: 0; /* Evita que el espacio afecte el tamaño de los enlaces */
+    background-image: url('Makiu.png'); /* Ruta de la imagen de fondo */
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px; /* Borde redondeado para la imagen */
+}
+
+/* Estilos para el contenido principal */
+main {
+    margin-top: 140px; /* Espacio para el encabezado fijo */
+    padding: 20px;
+    display: flex;
+    justify-content: center; /* Centra el contenido horizontalmente */
+}
+
+/* Estilos para la galería de imágenes */
+.gallery {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+}
+
+.gallery img {
+    max-width: 100%;
+    margin: 10px;
+    border-radius: 5px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.gallery img:hover {
+    transform: scale(1.1); /* Efecto de escala al hacer hover */
+}
+
+/* Estilos para la superposición de imágenes */
+.image-overlay {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(255, 255, 255, 0);
+    z-index: 10;
+    display: none;
+}
+
+.gallery img:hover + .image-overlay {
+    display: block;
+}
+
+/* Estilos para el pie de página */
+footer {
+    background-color: rgba(248, 215, 218, 0.8); /* Color de fondo con transparencia */
+    color: #333;
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Cambia la dirección de los elementos a columna */
+    }
+
+    .left-nav, .right-nav {
+        text-align: center;
+        margin: 10px 0;
+        flex: none; /* No crece, tamaño fijo */
+    }
+
+    nav ul {
+        flex-direction: row; /* Distribuye los elementos en una fila */
+        justify-content: center; /* Centra los elementos en la fila */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Espacio entre elementos */
+    }
+
+    main {
+        margin-top: 180px; /* Ajuste para pantallas más pequeñas */
+    }
+}
+
+/* Deshabilitar zoom */
+@viewport {
+    zoom: 1.0; /* Zoom inicial */
+    min-zoom: 1.0; /* Zoom mínimo */
+    max-zoom: 1.0; /* Zoom máximo */
+    user-zoom: fixed; /* Zoom deshabilitado */
+}
